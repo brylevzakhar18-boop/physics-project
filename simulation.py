@@ -1,12 +1,24 @@
 import math
 
-speed = 20
-angle = 45
+g = 9.81
+v0 = 20
+angle_deg = 45
+dt = 0.05
 
-angle_rad = math.radians(angle)
+angle = math.radians(angle_deg)
 
-vx = speed * math.cos(angle_rad)
-vy = speed * math.sin(angle_rad)
+t = 0.0
+x = 0.0
+y = 0.0
 
-print("Horizontal speed:", round(vx, 2))
-print("Vertical speed:", round(vy, 2))
+vx = v0 * math.cos(angle)
+vy = v0 * math.sin(angle)
+
+print("t\t x\t y")
+
+while y >= 0:
+    print(f"{t:.2f}\t{x:.2f}\t{y:.2f}")
+    t += dt
+    x += vx * dt
+    y += vy * dt
+    vy -= g * dt
