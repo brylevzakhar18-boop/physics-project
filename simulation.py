@@ -22,3 +22,4 @@ while y >= 0:
     x += vx * dt
     y += vy * dt
     vy -= g * dt
+input("Press Enter to exit...")
